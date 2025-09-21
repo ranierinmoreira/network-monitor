@@ -1,0 +1,15 @@
+
+---
+
+👉 Agora tu pode atualizar o arquivo `README.md` no teu repo com esse conteúdo e dar um commit:  
+
+```bash
+git add README.md
+git commit -m "Atualiza roadmap: Dia 1 concluído, Dia 2 em progresso"
+git push origin main
+
+network-monitor/
+│── monitor.py
+│── hosts.txt
+│── requirements.txt
+│── README.md

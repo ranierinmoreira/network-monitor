@@ -1,4 +1,4 @@
-🌐 Network Monitor
+# 🌐 Network Monitor
 
 Projeto simples de monitoramento de rede (mini-NOC).  
 A ideia é evoluir o projeto **um pouco por dia**, mostrando passo a passo como construir uma ferramenta real de monitoramento.
@@ -22,8 +22,8 @@ Criar um sistema que:
 - Subir script básico de ping (`monitor.py`).
 - Mostrar status de alguns hosts no terminal.
 
-### 🔜 Dia 2
-- Ler lista de hosts de um arquivo (`hosts.json` ou `hosts.txt`).
+### 🔨 Dia 2 (em progresso)
+- Ler lista de hosts de um arquivo (`hosts.txt`).
 - Permitir personalizar os hosts monitorados.
 
 ### 🔜 Dia 3
@@ -50,5 +50,4 @@ Criar um sistema que:
 1. Clone o repositório:
    ```bash
    git clone https://github.com/ranierinmoreira/network-monitor.git
-
    cd network-monitor
