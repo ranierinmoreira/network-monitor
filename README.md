@@ -15,6 +15,15 @@ Criar um sistema que:
 
 ---
 
+## ✨ Funcionalidades atuais
+- Ping em múltiplos hosts (compatível com Windows e Linux/Mac).
+- Lista de hosts personalizável via arquivo `host.txt`.
+- Saída colorida no terminal (verde = online ✅, vermelho = offline ❌).
+- Exibição do tempo de resposta em ms.
+- Registro de histórico com data/hora no arquivo `monitor.log`.
+
+---
+
 ## 📅 Roadmap Diário
 
 ### ✅ Dia 1
@@ -22,15 +31,15 @@ Criar um sistema que:
 - Subir script básico de ping (`monitor.py`).
 - Mostrar status de alguns hosts no terminal.
 
-### 🔨 Dia 2 (em progresso)
-- Ler lista de hosts de um arquivo (`hosts.txt`).
+### ✅ Dia 2
+- Ler lista de hosts de um arquivo (`host.txt`).
 - Permitir personalizar os hosts monitorados.
 
-### 🔜 Dia 3
+### ✅ Dia 3
 - Melhorar saída no terminal (cores, tempo de resposta em ms).
-- Criar um mini-dashboard no console.
+- Salvar histórico das verificações em arquivo de log (`monitor.log`).
 
-### 🔜 Dia 4
+### 🔨 Dia 4 (em progresso)
 - Criar API com **FastAPI** (`/status?host=...`).
 - Retornar resultado em JSON.
 
@@ -45,9 +54,42 @@ Criar um sistema que:
 
 ---
 
+## 📂 Estrutura do projeto
+
+```
+network-monitor/
+│── monitor.py        # Script principal de monitoramento
+│── host.txt          # Lista de hosts a monitorar (um por linha)
+│── monitor.log       # Histórico das verificações (gerado automaticamente)
+│── requirements.txt  # Dependências do projeto
+│── README.md
+```
+
+---
+
 ## 🛠️ Como rodar
 
 1. Clone o repositório:
    ```bash
    git clone https://github.com/ranierinmoreira/network-monitor.git
    cd network-monitor
+   ```
+
+2. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Edite o arquivo `host.txt` com os hosts que deseja monitorar (um por linha):
+   ```
+   8.8.8.8
+   1.1.1.1
+   github.com
+   ```
+
+4. Execute o monitor:
+   ```bash
+   python monitor.py
+   ```
+
+5. Confira o histórico no arquivo `monitor.log`.
