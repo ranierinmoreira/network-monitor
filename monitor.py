@@ -1,11 +1,15 @@
 import os
 import platform
 import subprocess
+import sys
 from datetime import datetime
 from colorama import Fore, Style, init
 
 # Inicializa colorama
 init(autoreset=True)
+
+# Garante que emojis sejam exibidos mesmo em consoles Windows com cp1252
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 def ping(host: str) -> tuple[bool, float | None]:
     """
@@ -18,7 +22,8 @@ def ping(host: str) -> tuple[bool, float | None]:
         result = subprocess.run(
             ["ping", param, "1", host],
             capture_output=True,
-            text=True
+            text=True,
+            errors="replace"  # saída do ping no Windows usa codepage OEM (ex: cp850)
         )
         if result.returncode == 0:
             # Extrai tempo de resposta
